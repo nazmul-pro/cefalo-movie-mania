@@ -1,0 +1,15 @@
+.mat-toolbar.mat-primary {
+  background-color: #060d17;
+  box-shadow: "0 3px 5px -1px #0003";
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%  !important;
+}
+.menu-item {
+  cursor: pointer;
+}
+.menu-item:hover {
+  background-color: #111f33;
+}

@@ -1,0 +1,13 @@
+.menu-item {
+    height: 70px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+.menu-item:hover {
+    background-color: #111f33;
+}
+.sidenav {
+    padding-top: 65px;
+    width: 120px;
+}

@@ -6,10 +6,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/modules/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { TopNavigationComponent } from './shared/components/top-navigation/top-navigation.component';
+import { SideNavigationComponent } from './shared/components/side-navigation/side-navigation.component';
+import { FlickityModule } from 'ngx-flickity';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TopNavigationComponent,
+    SideNavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -17,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     MaterialModule,
     HttpClientModule,
+    FlickityModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

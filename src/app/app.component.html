@@ -1,1 +1,12 @@
-<router-outlet></router-outlet>
+<div class="home">
+  <app-top-navigation [sidenav]="sidenav"></app-top-navigation>  
+  <mat-sidenav-container fxFlexFill style="padding-top: 64px;">
+    <mat-sidenav #sidenav style="background-color: #060d17;">
+      <app-side-navigation></app-side-navigation>           
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>        
+      <router-outlet></router-outlet>  
+    </mat-sidenav-content>
+  </mat-sidenav-container>  
+</div>
+  
