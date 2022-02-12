@@ -1,0 +1,13 @@
+<div class="movie">       
+    <div class="movie-img" style="background-image:url({{posterImageHostUrl}}{{movie.poster_path}})"></div>
+    <div class="text-movie-cont">
+      <div class="mr-grid">
+        <div class="col1">
+          <h3 title="{{movie.title}}">{{movie.title?.slice(0, 50)}}</h3>
+          <ul class="movie-gen">
+            <li>Released: {{movie.release_date}} </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

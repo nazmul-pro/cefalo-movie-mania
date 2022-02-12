@@ -11,6 +11,7 @@
     height: 150px;
     background-size: cover;
     background-position: center center;
+    border-radius: 4px;
   }
 }
 
@@ -19,15 +20,7 @@
   color: white;
 }
 
-.genre-title {
-  padding-top: 20px;
-  font-size: 16px;
-  color: white;
-}
-
 .genre-card:hover {
   transition: transform .3s;
-  /* Animation */
-
   transform: scale(1.1)
 }

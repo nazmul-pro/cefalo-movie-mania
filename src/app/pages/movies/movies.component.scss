@@ -17,32 +17,3 @@ body { font-family: sans-serif; }
     z-index: 2;
     width: 100%  !important;
 }
-
-.gallery {
-    background: #070f1a;
-  }
-  
-  .gallery-cell {
-    width: 15%;
-    height: 70px;
-    margin-right: 10px;
-    border: 1px solid #152233;
-    border-radius: 5px;
-    background: #060d17;
-    color: white;
-  }
-  
-.movie-card {
-    height: auto;
-    min-height: 250px;
-    /* width: 200px; */
-    font-size: 20px;
-    color: white;    
-    border: 1px solid #152233;
-    border-radius: 5px;
-}
-.movie-genre {
-    font-size: 18px;
-    color: white;
-    padding: 20px;
-}

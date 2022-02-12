@@ -1,5 +1,5 @@
 export interface IListResApi<T> {
-  results: T[];
+  results: T;
   page?: number;
   total_results?: number;
   total_pages?: number;
@@ -7,4 +7,5 @@ export interface IListResApi<T> {
 
 export interface IListReqParamsApi {
   page?: number;
+  with_genres?: number;
 }

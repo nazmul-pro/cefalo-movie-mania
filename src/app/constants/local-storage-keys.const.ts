@@ -1,0 +1,1 @@
+export const MOVIE_GENRE_PARAMS_KEY = 'movieParamsByGenre';
