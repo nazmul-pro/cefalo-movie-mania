@@ -1,0 +1,33 @@
+.carousel-nav-icon {
+  height: 48px;
+  width: 48px;
+}
+
+.carousel-item {
+  .col,
+  .col-sm,
+  .col-md {
+    margin: 8px;
+    height: 150px;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+.genre-name {
+  font-size: 24px;
+  color: white;
+}
+
+.genre-title {
+  padding-top: 20px;
+  font-size: 16px;
+  color: white;
+}
+
+.genre-card:hover {
+  transition: transform .3s;
+  /* Animation */
+
+  transform: scale(1.1)
+}

@@ -1,0 +1,44 @@
+<div class="text-center">
+   <p class="genre-title">Movies by Genre</p>
+   <div class="row d-flex align-items-center">
+      <div class="col-1 d-flex align-items-center justify-content-center">
+         <a role="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <div class="carousel-nav-icon">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <path
+                     d="m88.6,121.3c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2c1.6-1.6 1.6-4.2 0-5.8l-51-51 51-51c1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8,0l-54,53.9c-1.6,1.6-1.6,4.2 0,5.8l54,53.9z" />
+               </svg>
+            </div>
+         </a>
+      </div>
+      <div class="col-10">
+         <!--Start carousel-->
+         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+               <div class="carousel-item" [ngClass]="{'active': gi === 0}"
+                  *ngFor="let grp of genreGroups;let gi = index">
+                  <div class="row">
+                     <div *ngFor="let genre of grp;let i = index" (click)="gotoGenre()"
+                        title="{{'Go for more ' + genre.name}}" style="background-image:url({{genre.imageUrl}});"
+                        class="genre-card cursor-pointer col-12 col-md d-flex align-items-center justify-content-center">
+                        <p class="genre-name">{{genre.name}}</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--End carousel-->
+      </div>
+      <div class="col-1 d-flex align-items-center justify-content-center"><a role="button"
+            data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <div class="carousel-nav-icon">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <path
+                     d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" />
+               </svg>
+            </div>
+         </a>
+      </div>
+   </div>
+</div>

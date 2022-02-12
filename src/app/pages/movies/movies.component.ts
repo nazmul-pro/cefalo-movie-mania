@@ -4,7 +4,7 @@ import { GenreApiService } from 'src/app/services/genre-api.service';
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.css'],
+  styleUrls: ['./movies.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class MoviesComponent implements OnInit {
