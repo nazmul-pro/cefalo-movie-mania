@@ -11,6 +11,11 @@ const routes: Routes = [
     data: { breadcrumb: 'Movies' },
     loadChildren: () => import('./pages/movies/movies.module').then(m => m.MoviesModule)
   },
+  {
+    path: 'movies/genres/:genreId',
+    data: { breadcrumb: 'Movie Genre' },
+    loadChildren: () => import('./pages/movie-genre/movie-genre.module').then(m => m.MovieGenreModule)
+  },
   { path: '', redirectTo: 'movies', pathMatch: 'full' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

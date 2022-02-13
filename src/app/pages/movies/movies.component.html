@@ -1,6 +1,6 @@
 <div *ngIf="genres">
   <app-genre-list-slider [genres]="genres"></app-genre-list-slider>
-  <div fxLayout="column" fxLayoutAlign="start center">
+  <div fxLayout="column">
     <div *ngFor="let genre of genres" class="text-center">
       <p class="genre-title">{{genre.name}} movies</p>
       <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap="20px grid">

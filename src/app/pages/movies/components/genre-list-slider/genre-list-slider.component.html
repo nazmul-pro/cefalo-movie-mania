@@ -19,7 +19,7 @@
                <div class="carousel-item" [ngClass]="{'active': gi === 0}"
                   *ngFor="let grp of genreGroups;let gi = index">
                   <div class="row">
-                     <div *ngFor="let genre of grp;let i = index" (click)="gotoGenre()"
+                     <div *ngFor="let genre of grp;let i = index" (click)="gotoGenre(genre.id)"
                         title="{{'Go for more ' + genre.name}}" style="background-image:url({{genre.imageUrl}});"
                         class="genre-card cursor-pointer col-12 col-md d-flex align-items-center justify-content-center">
                         <p class="genre-name">{{genre.name}}</p>

@@ -11,11 +11,10 @@ import { IMovie } from "../interfaces/movie.interface";
 export class MovieApiService extends RestApiService<IMovie> {
   protected baseUrl: string = 'discover/movie';
 
-  public getMoviesByGenreId(id: number): Observable<IListResApi<IMovie[]>> {
+  public getMoviesByGenreId(id: number, queryParams?: any): Observable<IListResApi<IMovie[]>> {
     const params = {
       with_genres: id,
-      page: UtilService.getRandomMoviePageNumber(id),
     }
-    return this.getList(params);
+    return this.getList({...params, ...queryParams});
   }
 }

@@ -47,7 +47,9 @@ export class MoviesComponent implements OnInit, OnDestroy {
     from(this.genres).pipe(
 
       mergeMap(
-        genre => this.movieApiService.getMoviesByGenreId(genre.id)
+        genre => this.movieApiService.getMoviesByGenreId(genre.id, 
+          { page: UtilService.getRandomMoviePageNumber(genre.id) }
+        )
         .pipe(map(resp => {return {genre, resp}}))
       ),
       takeUntil(this.clearSubs$),
