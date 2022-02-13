@@ -2,7 +2,7 @@
   <app-genre-list-slider [genres]="genres"></app-genre-list-slider>
   <div fxLayout="column">
     <div *ngFor="let genre of genres" class="text-center">
-      <p class="genre-title">{{genre.name}} movies</p>
+      <p class="genre-title">{{genre.name}} Movies</p>
       <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap="20px grid">
         <div *ngFor="let movie of genre?.movies">
           <app-movie-card [movie]="movie"></app-movie-card>

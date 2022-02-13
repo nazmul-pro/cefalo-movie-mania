@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   appServiceHostUrl: 'https://api.themoviedb.org/3',
   appServiceApiKey: 'cd890f94a756b1518a2a17617a5b430e',
-  posterImageHostUrl: 'https://image.tmdb.org/t/p/w300',
+  posterImageHostUrl: 'https://image.tmdb.org/t/p',
 };
 
 /*
