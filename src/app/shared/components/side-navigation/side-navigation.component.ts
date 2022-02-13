@@ -5,14 +5,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   templateUrl: './side-navigation.component.html',
   styleUrls: ['./side-navigation.component.css']
 })
-export class SideNavigationComponent implements OnInit {
+export class SideNavigationComponent {
   @ViewChild('sidenav') sidenav!: SideNavigationComponent;
-
-  constructor() { }
-
-  ngOnInit(): void {
-    console.log(this.sidenav);
-    
-  }
 
 }

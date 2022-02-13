@@ -1,0 +1,49 @@
+<section id="banner" #top class="clearfix">
+    <div id="banner_content_wrapper">
+        <div id="poster" >
+            <img src="{{posterImageHostUrl}}{{movie?.poster_path}}" alt="{{movie?.title}}" class="featured_image">
+        </div>
+        <div id="content">
+            <h1 class="title">{{movie?.title}}</h1>
+            <div class="py-2">
+                <span (click)="gotoGenre(genre.id)" class="genre-coin" *ngFor="let genre of movie?.genres">{{genre.name}}</span>
+            </div>
+
+            <p class="description">{{movie?.overview}}</p>
+            <div>
+                <span class="rating text-white" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                    <mat-icon>star</mat-icon> 
+                    <span fxFlex="15">{{movie?.vote_average}}</span>
+                    <span (click)="gotoImdb()" class="imdb-icon">IMDb</span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="text-center py-4">
+        <p class="genre-title">Top Casts</p>
+        <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap="20px grid">
+          <div *ngFor="let cast of movie?.credits?.cast?.slice(0, 10)">
+            <app-movie-cast-crew-card [person]="cast"></app-movie-cast-crew-card>
+          </div>
+        </div>
+      </div>
+    <div class="text-center py-2">
+        <p class="genre-title">Top Crews</p>
+        <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap="20px grid">
+          <div *ngFor="let cast of movie?.credits?.crew?.slice(0, 10)">
+            <app-movie-cast-crew-card [person]="cast"></app-movie-cast-crew-card>
+          </div>
+        </div>
+      </div>
+    
+      
+      <div class="text-center py-2">
+        <p class="genre-title">Related/Recommended Movies</p>
+        <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap="20px grid">
+          <div *ngFor="let movie of recomMovies">
+            <app-movie-card [movie]="movie"></app-movie-card>
+          </div>
+        </div>
+      </div>
+
+</section>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IMovie } from "src/app/interfaces/movie.interface";
 import { environment } from 'src/environments/environment';
 
@@ -7,13 +8,16 @@ import { environment } from 'src/environments/environment';
   templateUrl: './movie-card.component.html',
   styleUrls: ['./movie-card.component.scss'],
 })
-export class MovieCardComponent implements OnInit {
+export class MovieCardComponent {
   @Input() public movie!: IMovie;
-  public posterImageHostUrl: string = environment.posterImageHostUrl;
+  public posterImageHostUrl: string = environment.posterImageHostUrl + '/w300';
 
-  constructor() { }
+  constructor(    
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+  ) { }
 
-  ngOnInit(): void {
+  public gotoMovieDetail(): void {
+    this.router.navigate([`movies/${this.movie.id}`]);
   }
-
 }

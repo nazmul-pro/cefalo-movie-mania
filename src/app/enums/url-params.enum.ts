@@ -1,3 +1,4 @@
 export enum UrlParamsProps {
-    GENRE_ID = 'genreId'
+    GENRE_ID = 'genreId',
+    MOVIE_ID = 'movieId',
 }

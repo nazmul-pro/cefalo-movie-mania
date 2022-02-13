@@ -1,0 +1,12 @@
+<div fxLayout="row" fxLayoutAlign="start start" class="cast-crew-card">    
+    <div fxFlex="30" *ngIf="person?.profile_path">
+        <img width="67" height="auto" src="{{posterImageHostUrl}}{{person?.profile_path}}" alt="">
+    </div>
+    <div fxFlex="30" class="no-pic" *ngIf="!person?.profile_path">
+        No Picture
+    </div>
+    <div class="p-3 text-white">
+        <div class="person-name">{{person?.name}}</div>
+        <div class="person-job">{{person?.known_for_department ? person?.known_for_department : person?.department}}  |  {{person?.character ? person?.character : person?.job}}</div>
+    </div>
+</div>
