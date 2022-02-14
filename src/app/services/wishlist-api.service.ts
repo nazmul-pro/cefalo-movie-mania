@@ -12,24 +12,24 @@ export class WishlistApiService {
     private localStorageService: LocalStorageService,
   ) { }
 
+  public getAllMoviesFromWishlist(id: number): IMovie {
+    return this.localStorageService.getItem(WISH_LIST_KEY);
+  }
+
   public getMovieFromWishlist(id: number): IMovie {
     const allWishlist = this.localStorageService.getItem(WISH_LIST_KEY);
     return allWishlist && allWishlist.find((m: IMovie) => m.id === id);
   }
 
-  public setMovieToWishlist(movie: IMovie): void {
+  public addOrRemoveMovieToWishlist(movie: IMovie): void {
     const allWishlist = this.localStorageService.getItem(WISH_LIST_KEY) || [];
-    allWishlist.push({...movie, date: new Date()});
-    this.localStorageService.setItem(WISH_LIST_KEY, allWishlist);
-  }
-
-  public removeMovieFromWishlist(id: number): void {
-    const allWishlist = this.localStorageService.getItem(WISH_LIST_KEY) || [];
-    const idx = allWishlist.findIndex((m: IMovie) => m.id === id)
+    const idx = allWishlist.findIndex((m: IMovie) => m.id === movie.id)
     if (idx > -1) {
       allWishlist.splice(idx, 1);
-      this.localStorageService.setItem(WISH_LIST_KEY, allWishlist);
+    } else {
+      allWishlist.push({...movie, date: new Date()});
     }
+    this.localStorageService.setItem(WISH_LIST_KEY, allWishlist);
   }
   
   public checkMovieInWishlist(id: number): boolean {

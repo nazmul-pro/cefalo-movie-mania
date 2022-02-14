@@ -12,7 +12,7 @@ export class LocalStorageService {
   public getItem( key: string ): any {
     const item = localStorage.getItem(key);
     return item && JSON.parse(item)
-      ? JSON.parse(item).data
+      ? JSON.parse(item)
       : null;
   }
 
