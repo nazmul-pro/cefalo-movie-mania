@@ -4,6 +4,7 @@ import { forkJoin, map, Subject, takeUntil } from 'rxjs';
 import { UrlParamsProps } from 'src/app/enums/url-params.enum';
 import { IMovie, IMovieDetail } from 'src/app/interfaces/movie.interface';
 import { MovieDetailApiService } from 'src/app/services/movie-detail-api.service';
+import { RecentlyViewedApiService } from 'src/app/services/recently-viewed-api.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -22,8 +23,10 @@ export class MovieDetailComponent implements OnInit, OnDestroy, AfterViewInit {
 
   constructor(
     private movieDetailApiService: MovieDetailApiService,
+    private recentlyViewedApiService: RecentlyViewedApiService,
     private activatedRoute: ActivatedRoute,    
     private router: Router,
+
   ) { }
 
   public ngOnInit(): void {
@@ -71,6 +74,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy, AfterViewInit {
           this.movie = results[0];
           this.movie.id = this.movieId;
           this.movie.credits = results[1];
+          this.recentlyViewedApiService.addMovieToRecentlyViewed(this.movie);
         });
   }
 

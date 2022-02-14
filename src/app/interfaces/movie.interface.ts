@@ -36,5 +36,9 @@ export interface ICastCrewPerson {
 }
 
 export interface IWishListMovie extends IMovie {
-  date: Date
+  date: Date;
+}
+
+export interface IRecentlyViewedMovie extends IMovie {
+  visitedDate: Date;
 }

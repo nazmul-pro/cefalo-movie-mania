@@ -26,6 +26,11 @@ const routes: Routes = [
     data: { breadcrumb: 'Movie Wish List' },
     loadChildren: () => import('./pages/wishlist/wishlist.module').then(m => m.WishlistModule)
   },
+  {
+    path: 'recently-viewed',
+    data: { breadcrumb: 'Recently Viewed Movie List' },
+    loadChildren: () => import('./pages/recently-viewed/recently-viewed.module').then(m => m.RecentlyViewedModule)
+  },
   { path: '', redirectTo: 'movies', pathMatch: 'full' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
