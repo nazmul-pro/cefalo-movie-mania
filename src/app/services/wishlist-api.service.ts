@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { WISH_LIST_KEY } from '../constants/local-storage-keys.const';
 import { LocalStorageService } from '../core/services/api/local-storage.service';
-import { IMovie } from '../interfaces/movie.interface';
+import { IMovie, IWishListMovie } from '../interfaces/movie.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,12 @@ export class WishlistApiService {
     private localStorageService: LocalStorageService,
   ) { }
 
-  public getAllMoviesFromWishlist(id: number): IMovie {
-    return this.localStorageService.getItem(WISH_LIST_KEY);
+  public getAllMoviesFromWishlist(): IWishListMovie[] {
+    const allWishlist = this.localStorageService.getItem(WISH_LIST_KEY) || [];
+    allWishlist.sort((a: IWishListMovie, b: IWishListMovie) => {
+      return +new Date(b.date) - +new Date(a.date);
+    });
+    return allWishlist;
   }
 
   public getMovieFromWishlist(id: number): IMovie {

@@ -9,6 +9,7 @@ import { WishlistApiService } from 'src/app/services/wishlist-api.service';
 })
 export class MovieWishlistAddRemoveIconComponent {
   @Input() public movie!: IMovie;
+  @Input() public size!: string;
   constructor(
     private wishlistApiService: WishlistApiService,
   ) { }

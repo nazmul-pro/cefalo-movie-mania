@@ -8,6 +8,7 @@ export interface IMovie {
 }
 
 export interface IMovieDetail {
+    id: number;
     imdb_id: string;
     vote_average: number;
     overview: string;
@@ -32,4 +33,8 @@ export interface ICastCrewPerson {
     department: string;
     job: string;
     character: string;
+}
+
+export interface IWishListMovie extends IMovie {
+  date: Date
 }

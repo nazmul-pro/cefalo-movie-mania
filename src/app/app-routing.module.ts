@@ -21,6 +21,11 @@ const routes: Routes = [
     data: { breadcrumb: 'Movie Detail' },
     loadChildren: () => import('./pages/movie-detail/movie-detail.module').then(m => m.MovieDetailModule)
   },
+  {
+    path: 'wishlist',
+    data: { breadcrumb: 'Movie Wish List' },
+    loadChildren: () => import('./pages/wishlist/wishlist.module').then(m => m.WishlistModule)
+  },
   { path: '', redirectTo: 'movies', pathMatch: 'full' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
