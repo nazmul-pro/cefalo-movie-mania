@@ -27,7 +27,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy, AfterViewInit {
   ) { }
 
   public ngOnInit(): void {
-    this.activatedRoute.params.subscribe(routeParams => {
+    this.activatedRoute.params.subscribe(() => {
       this.movieId = Number(this.activatedRoute.snapshot.paramMap.get(UrlParamsProps.MOVIE_ID));
 
       this.movieId && this.getMovieDetailById();
@@ -69,6 +69,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy, AfterViewInit {
         .pipe(takeUntil(this.clearSubs$))
         .subscribe(results => {
           this.movie = results[0];
+          this.movie.id = this.movieId;
           this.movie.credits = results[1];
         });
   }

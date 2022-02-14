@@ -1,13 +1,14 @@
-<div class="movie" (click)="gotoMovieDetail()">       
+<div class="movie" (click)="gotoMovieDetail()">
     <div class="movie-img" style="background-image:url({{posterImageHostUrl}}{{movie.poster_path}})"></div>
     <div class="text-movie-cont">
-      <div class="mr-grid">
-        <div class="col1">
-          <h3 title="{{movie.title}}">{{movie.title?.slice(0, 50)}}</h3>
+      <div class="mr-grid" fxLayout="row" fxLayoutAlign="space-between start">
+        <div fxFlex="80">
+          <h3 title="{{movie.title}}">{{movie.title?.slice(0, 30)}}</h3>
           <ul class="movie-gen">
-            <li>Released: {{movie.release_date}} </li>
+            <li>Released: {{movie.release_date | date: 'mediumDate'}} </li>
           </ul>
         </div>
+        <app-movie-wishlist-add-remove-icon [movie]="movie"></app-movie-wishlist-add-remove-icon>
       </div>
     </div>
   </div>

@@ -1,0 +1,8 @@
+<mat-icon
+    title="{{checkInWishList() ? 'Remove from wish list' : 'Add to wish list'}}"
+    (click)="addOrRemove();$event.stopPropagation()"
+    class="wishlist-icon"
+    [ngStyle]="{'font-size': size || '30px'}"
+    [ngClass]="{'wishlist-added': checkInWishList()}">
+    {{checkInWishList() ? 'bookmark_remove' : 'bookmark_add'}}
+</mat-icon>

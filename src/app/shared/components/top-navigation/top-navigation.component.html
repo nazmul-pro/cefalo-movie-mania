@@ -13,8 +13,8 @@
       <div fxShow="true" fxHide.lt-md>
         <!-- The following menu items will be hidden on both SM and XS screen sizes -->
         <a href="#" [routerLink]="['/movies']" routerLinkActive="router-link-active"  mat-button class="menu-item">Movies</a>
-        <a href="#" mat-button class="menu-item">Wish List</a>
-        <a href="#" mat-button class="menu-item">Recently Viewed</a>
+        <a href="#" [routerLink]="['/wishlist']" mat-button class="menu-item">Wish List</a>
+        <a href="#" [routerLink]="['/recentlt-viewed']" mat-button class="menu-item">Recently Viewed</a>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>

@@ -11,10 +11,11 @@
 
             <p class="description">{{movie?.overview}}</p>
             <div>
-                <span class="rating text-white" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                <span class="rating text-white" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
                     <mat-icon>star</mat-icon> 
-                    <span fxFlex="15">{{movie?.vote_average}}</span>
+                    <span>{{movie?.vote_average}}</span>
                     <span (click)="gotoImdb()" class="imdb-icon">IMDb</span>
+                    <app-movie-wishlist-add-remove-icon size="'40px'" [movie]="movie"></app-movie-wishlist-add-remove-icon>
                 </span>
             </div>
         </div>
