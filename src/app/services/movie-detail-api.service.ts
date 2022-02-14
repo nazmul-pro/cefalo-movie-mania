@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IListResApi } from '../core/interfaces/api.interface';
 import { RestApiService } from '../core/services/api/rest-api.service';
-import { IMovie, IMovieCredits, IMovieDetail } from '../interfaces/movie.interface';
+import { IMovie, IMovieCredits, IMovieDetail, IMovieVideos } from '../interfaces/movie.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +22,8 @@ export class MovieDetailApiService extends RestApiService<IMovieDetail> {
   public getRecommendedById(id: number): Observable<IListResApi<IMovie[]>> {
     return this.getItem({}, `${id}/recommendations`);
   }
-
+  
+  public getVideosById(id: number): Observable<IListResApi<IMovieVideos[]>> {
+    return this.getItem({}, `${id}/videos`);
+  }
 }

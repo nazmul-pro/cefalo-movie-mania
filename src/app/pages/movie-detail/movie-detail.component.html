@@ -19,6 +19,11 @@
                 </span>
             </div>
         </div>
+        
+      </div>
+    <div class="text-center" style="margin-top: 30px;" *ngIf="safeVideoURL">
+      <iframe width="890" height="400" [src]="safeVideoURL" allowfullscreen>
+      </iframe>
     </div>
     <div class="text-center py-4">
         <p class="genre-title">Top Casts</p>

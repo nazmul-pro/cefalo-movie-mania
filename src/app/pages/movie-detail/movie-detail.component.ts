@@ -1,8 +1,9 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { forkJoin, map, Subject, takeUntil } from 'rxjs';
+import { forkJoin, map, Observable, Subject, takeUntil } from 'rxjs';
 import { UrlParamsProps } from 'src/app/enums/url-params.enum';
-import { IMovie, IMovieDetail } from 'src/app/interfaces/movie.interface';
+import { IMovie, IMovieDetail, IMovieVideos } from 'src/app/interfaces/movie.interface';
 import { MovieDetailApiService } from 'src/app/services/movie-detail-api.service';
 import { RecentlyViewedApiService } from 'src/app/services/recently-viewed-api.service';
 import { environment } from 'src/environments/environment';
@@ -20,22 +21,24 @@ export class MovieDetailComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild("top") top!: ElementRef;
 
   private clearSubs$ = new Subject();
+  public safeVideoURL!: SafeResourceUrl;
 
   constructor(
     private movieDetailApiService: MovieDetailApiService,
     private recentlyViewedApiService: RecentlyViewedApiService,
     private activatedRoute: ActivatedRoute,    
     private router: Router,
-
+    private _sanitizer: DomSanitizer
   ) { }
 
   public ngOnInit(): void {
     this.activatedRoute.params.subscribe(() => {
       this.movieId = Number(this.activatedRoute.snapshot.paramMap.get(UrlParamsProps.MOVIE_ID));
-
-      this.movieId && this.getMovieDetailById();
-      this.movieId && this.getRelatedMovie();
-
+      if (this.movieId) {
+        this.getMovieDetailById();
+        this.getRelatedMovie();
+        this.getVideosById();
+      }
     });
   }
 
@@ -76,6 +79,14 @@ export class MovieDetailComponent implements OnInit, OnDestroy, AfterViewInit {
           this.movie.credits = results[1];
           this.recentlyViewedApiService.addMovieToRecentlyViewed(this.movie);
         });
+  }
+
+  private getVideosById(): void {
+    this.movieDetailApiService.getVideosById(this.movieId)
+      .pipe(takeUntil(this.clearSubs$), map(v => v.results))
+      .subscribe(v => {
+        this.safeVideoURL = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+v[0].key);
+      });
   }
 
 }

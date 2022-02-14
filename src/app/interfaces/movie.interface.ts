@@ -42,3 +42,12 @@ export interface IWishListMovie extends IMovie {
 export interface IRecentlyViewedMovie extends IMovie {
   visitedDate: Date;
 }
+
+export interface IMovieVideos {
+  key: string;
+  site: string;
+  name: string;
+  type: string;
+  official: boolean;
+  size: number;
+}
