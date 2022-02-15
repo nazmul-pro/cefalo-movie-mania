@@ -93,7 +93,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy, AfterViewInit {
     this.movieDetailApiService.getVideosById(this.movieId)
       .pipe(takeUntil(this.clearSubs$), map(v => v.results))
       .subscribe(v => {
-        this.safeVideoURL = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+v[0].key);
+        this.safeVideoURL = this._sanitizer.bypassSecurityTrustResourceUrl(`${environment.youtubeVideoBaseUrl}/${v[0].key}`);
         this.cd.detectChanges();
       });
   }
