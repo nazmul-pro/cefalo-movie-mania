@@ -1,7 +1,7 @@
 <div *ngIf="genres">
   <app-genre-list-slider [genres]="genres"></app-genre-list-slider>
   <div fxLayout="column">
-    <div *ngFor="let genre of genres">
+    <div *ngFor="let genre of genres;trackBy:trackByFn">
       
       <app-movies-holder-with-group-title
         *ngIf="genre.movies"

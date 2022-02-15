@@ -9,5 +9,9 @@ import { IMovie } from 'src/app/interfaces/movie.interface';
 export class MoviesHolderWithGroupTitleComponent {
   @Input() public groupTitle: string = 'Movies';
   @Input() public movies: IMovie[] = [];
+  
+  public trackByFn(index: number, item: any): number {
+    return item.id;
+  }
 
 }

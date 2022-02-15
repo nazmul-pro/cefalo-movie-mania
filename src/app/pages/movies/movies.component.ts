@@ -33,7 +33,10 @@ export class MoviesComponent implements OnInit, OnDestroy {
     this.clearSubs$.complete();
   }
 
-  
+  public trackByFn(index: number, item: any): number {
+    return item.id;
+  }
+
   private getGenreList(): void {
     this.genreApiService.getGenreList()
     .pipe(takeUntil(this.clearSubs$), map(d => d.genres))
