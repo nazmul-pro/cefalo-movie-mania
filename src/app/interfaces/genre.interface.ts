@@ -4,7 +4,7 @@ export interface IGenre {
     id: number;
     name: string;
     imageUrl?: string;
-    movies?: IMovie[]
+    movies?: IMovie[];
 }
 
 export interface IGenreApiResponse {

@@ -1,7 +1,7 @@
 <div class="text-center">
     <p class="genre-title py-4">{{groupTitle}}</p>
     <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap="20px grid">
-        <div *ngIf="movies.length < 1" class="py-4">No Movie Available</div>
+        <div *ngIf="movies && movies.length < 1" class="py-4">No Movie Available</div>
         <div *ngFor="let movie of movies">
             <app-movie-card [movie]="movie"></app-movie-card>
         </div>

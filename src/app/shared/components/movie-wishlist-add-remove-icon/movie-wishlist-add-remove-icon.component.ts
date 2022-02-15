@@ -20,6 +20,9 @@ export class MovieWishlistAddRemoveIconComponent {
   }
 
   public checkInWishList(): boolean {
+    if (!this.movie) {
+      return false;
+    }
     return this.wishlistApiService.checkMovieInWishlist(this.movie.id);
   }
 

@@ -42,14 +42,9 @@
         </div>
       </div>
     
-      
-      <div class="text-center py-2">
-        <p class="genre-title">Related/Recommended Movies</p>
-        <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap="20px grid">
-          <div *ngFor="let movie of recomMovies">
-            <app-movie-card [movie]="movie"></app-movie-card>
-          </div>
-        </div>
-      </div>
+      <app-movies-holder-with-group-title
+        [movies]="recomMovies" 
+        groupTitle="Related/Recommended Movies">
+      </app-movies-holder-with-group-title>
 
 </section>
