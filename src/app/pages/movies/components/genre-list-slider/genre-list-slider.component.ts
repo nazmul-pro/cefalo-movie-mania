@@ -30,6 +30,9 @@ export class GenreListSliderComponent implements OnInit {
     this.router.navigate([UrlPaths.GENRES, id], { relativeTo: this.activatedRoute});
   }
 
+  public trackByFn(index: number, item: any): number {
+    return item.id;
+  }
   
   private appendImageUrl(): void {
     this.genres = this.genres.map(g => {
