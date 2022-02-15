@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UrlPaths } from 'src/app/enums/url-paths.enum';
 import { IMovie } from "src/app/interfaces/movie.interface";
 import { environment } from 'src/environments/environment';
 
@@ -15,10 +16,9 @@ export class MovieCardComponent {
 
   constructor(    
     private router: Router,
-    private activatedRoute: ActivatedRoute,
   ) { }
 
   public gotoMovieDetail(): void {
-    this.router.navigate([`movies/${this.movie.id}`]);
+    this.router.navigate([`${UrlPaths.MOVIES}/${this.movie.id}`]);
   }
 }

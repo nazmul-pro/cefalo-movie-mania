@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnIni
 import { ActivatedRoute } from '@angular/router';
 import { map, Subject, takeUntil } from 'rxjs';
 import { NUMBER_OF_MOVIES_BY_GENRE } from 'src/app/constants/api-params.const';
-import { IListResApi } from 'src/app/core/interfaces/api.interface';
+import { QUERY_PARAMS_SORT_BY } from 'src/app/constants/api-query-params-key-value.const';
 import { UrlParamsProps } from 'src/app/enums/url-params.enum';
 import { IGenre } from 'src/app/interfaces/genre.interface';
 import { IMovie } from 'src/app/interfaces/movie.interface';
@@ -18,7 +18,7 @@ import { MovieApiService } from 'src/app/services/movie-api.service';
 export class MovieGenreComponent implements OnInit, OnDestroy {
   public genreId: number = Number(this.activatedRoute.snapshot.paramMap.get(UrlParamsProps.GENRE_ID));
   public movies: IMovie[] = [];
-  private genres!: IGenre[];
+  public genres!: IGenre[];
   private clearSubs$ = new Subject();
 
   constructor(
@@ -39,11 +39,11 @@ export class MovieGenreComponent implements OnInit, OnDestroy {
     this.clearSubs$.complete();
   }
 
-  public getGenreName(id: number): string {
-    if (!this.genres) {
+  public getGenreName(): string {
+    if (!this.genres || !this.genreId) {
       return 'No Genre';
     }
-    return this.genres.find(g => g.id === id)?.name || 'Not Found';
+    return this.genres.find(g => g.id === this.genreId)?.name || 'Not Found';
   }
 
   private getGenreList(): void {
@@ -58,7 +58,7 @@ export class MovieGenreComponent implements OnInit, OnDestroy {
   }
 
   private getMoviesByGenre(): void {
-    this.movieApiService.getMoviesByGenreId(this.genreId, {sort_by: 'popularity.desc'})
+    this.movieApiService.getMoviesByGenreId(this.genreId, {[QUERY_PARAMS_SORT_BY.key]: QUERY_PARAMS_SORT_BY.value})
     .pipe(takeUntil(this.clearSubs$), map(m => m.results.slice(0, NUMBER_OF_MOVIES_BY_GENRE)))  
     .subscribe(
         m => {

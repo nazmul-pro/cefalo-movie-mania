@@ -3,6 +3,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { forkJoin, map, Observable, Subject, takeUntil } from 'rxjs';
 import { UrlParamsProps } from 'src/app/enums/url-params.enum';
+import { UrlPaths } from 'src/app/enums/url-paths.enum';
 import { IMovie, IMovieDetail, IMovieVideos } from 'src/app/interfaces/movie.interface';
 import { MovieDetailApiService } from 'src/app/services/movie-detail-api.service';
 import { RecentlyViewedApiService } from 'src/app/services/recently-viewed-api.service';
@@ -62,11 +63,11 @@ export class MovieDetailComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   public gotoGenre(id: number): void {
-    this.router.navigate(['movies/genres', id]);
+    this.router.navigate([`${UrlPaths.MOVIES}/${UrlPaths.GENRES}`, id]);
   }
 
   public gotoImdb(): void {
-    window.open(`https://www.imdb.com/title/${this.movie.imdb_id}`, '_blank');
+    window.open(`${environment.imdbMovieBaseUrl}/${this.movie.imdb_id}`, '_blank');
   }
 
   private getMovieDetailById(): void {

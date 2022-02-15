@@ -1,8 +1,4 @@
-<div class="text-center">
-    <p class="genre-title py-4">My Wish List</p>
-    <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap="20px grid">
-      <div *ngFor="let movie of movies">
-        <app-movie-card [movie]="movie"></app-movie-card>
-      </div>
-    </div>
-  </div>
+<app-movies-holder-with-group-title
+  [movies]="movies" 
+  groupTitle="My Wish List">
+</app-movies-holder-with-group-title>
