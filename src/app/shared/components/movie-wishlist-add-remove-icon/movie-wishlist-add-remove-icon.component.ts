@@ -1,11 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { IMovie } from 'src/app/interfaces/movie.interface';
 import { WishlistApiService } from 'src/app/services/wishlist-api.service';
 
 @Component({
   selector: 'app-movie-wishlist-add-remove-icon',
   templateUrl: './movie-wishlist-add-remove-icon.component.html',
-  styleUrls: ['./movie-wishlist-add-remove-icon.component.css']
+  styleUrls: ['./movie-wishlist-add-remove-icon.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieWishlistAddRemoveIconComponent {
   @Input() public movie!: IMovie;
@@ -19,6 +20,9 @@ export class MovieWishlistAddRemoveIconComponent {
   }
 
   public checkInWishList(): boolean {
+    if (!this.movie) {
+      return false;
+    }
     return this.wishlistApiService.checkMovieInWishlist(this.movie.id);
   }
 

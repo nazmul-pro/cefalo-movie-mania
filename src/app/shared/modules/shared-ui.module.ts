@@ -4,6 +4,7 @@ import { MovieCardComponent } from '../components/movie-card/movie-card.componen
 import { MovieCastCrewCardComponent } from '../components/movie-cast-crew-card/movie-cast-crew-card.component';
 import { MaterialModule } from './material.module';
 import { MovieWishlistAddRemoveIconComponent } from '../components/movie-wishlist-add-remove-icon/movie-wishlist-add-remove-icon.component';
+import { MoviesHolderWithGroupTitleComponent } from '../components/movies-holder-with-group-title/movies-holder-with-group-title.component';
 
 
 
@@ -12,6 +13,7 @@ import { MovieWishlistAddRemoveIconComponent } from '../components/movie-wishlis
     MovieCardComponent,
     MovieCastCrewCardComponent,
     MovieWishlistAddRemoveIconComponent,
+    MoviesHolderWithGroupTitleComponent,
   ],
   imports: [
     CommonModule,
@@ -21,6 +23,7 @@ import { MovieWishlistAddRemoveIconComponent } from '../components/movie-wishlis
     MovieCardComponent,
     MovieCastCrewCardComponent,
     MovieWishlistAddRemoveIconComponent,
+    MoviesHolderWithGroupTitleComponent,
   ]
 })
 export class SharedUiModule { }

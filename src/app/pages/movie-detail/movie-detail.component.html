@@ -6,7 +6,7 @@
         <div id="content">
             <h1 class="title">{{movie?.title}}</h1>
             <div class="py-2">
-                <span (click)="gotoGenre(genre.id)" class="genre-coin" *ngFor="let genre of movie?.genres">{{genre.name}}</span>
+                <span (click)="gotoGenre(genre.id)" class="genre-coin" *ngFor="let genre of movie?.genres;trackBy: trackByFn;">{{genre.name}}</span>
             </div>
 
             <p class="description">{{movie?.overview}}</p>
@@ -28,7 +28,7 @@
     <div class="text-center py-4">
         <p class="genre-title">Top Casts</p>
         <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap="20px grid">
-          <div *ngFor="let cast of movie?.credits?.cast?.slice(0, 10)">
+          <div *ngFor="let cast of movie?.credits?.cast?.slice(0, 10);trackBy: trackByFn;">
             <app-movie-cast-crew-card [person]="cast"></app-movie-cast-crew-card>
           </div>
         </div>
@@ -36,20 +36,15 @@
     <div class="text-center py-2">
         <p class="genre-title">Top Crews</p>
         <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap="20px grid">
-          <div *ngFor="let cast of movie?.credits?.crew?.slice(0, 10)">
+          <div *ngFor="let cast of movie?.credits?.crew?.slice(0, 10);trackBy: trackByFn;">
             <app-movie-cast-crew-card [person]="cast"></app-movie-cast-crew-card>
           </div>
         </div>
       </div>
     
-      
-      <div class="text-center py-2">
-        <p class="genre-title">Related/Recommended Movies</p>
-        <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap="20px grid">
-          <div *ngFor="let movie of recomMovies">
-            <app-movie-card [movie]="movie"></app-movie-card>
-          </div>
-        </div>
-      </div>
+      <app-movies-holder-with-group-title
+        [movies]="recomMovies" 
+        groupTitle="Related/Recommended Movies">
+      </app-movies-holder-with-group-title>
 
 </section>
