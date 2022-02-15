@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map, Subject, takeUntil } from 'rxjs';
 import { NUMBER_OF_MOVIES_BY_GENRE } from 'src/app/constants/api-params.const';
-import { IListResApi } from 'src/app/core/interfaces/api.interface';
+import { QUERY_PARAMS_SORT_BY } from 'src/app/constants/api-query-params-key-value.const';
 import { UrlParamsProps } from 'src/app/enums/url-params.enum';
 import { IGenre } from 'src/app/interfaces/genre.interface';
 import { IMovie } from 'src/app/interfaces/movie.interface';
@@ -56,7 +56,7 @@ export class MovieGenreComponent implements OnInit, OnDestroy {
   }
 
   private getMoviesByGenre(): void {
-    this.movieApiService.getMoviesByGenreId(this.genreId, {sort_by: 'popularity.desc'})
+    this.movieApiService.getMoviesByGenreId(this.genreId, {[QUERY_PARAMS_SORT_BY.key]: QUERY_PARAMS_SORT_BY.value})
     .pipe(takeUntil(this.clearSubs$), map(m => m.results.slice(0, NUMBER_OF_MOVIES_BY_GENRE)))  
     .subscribe(
         m => this.movies = m,

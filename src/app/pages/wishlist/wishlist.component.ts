@@ -13,6 +13,4 @@ export class WishlistComponent {
   constructor(
     private wishListApiService: WishlistApiService,
   ) { }
-
-
 }

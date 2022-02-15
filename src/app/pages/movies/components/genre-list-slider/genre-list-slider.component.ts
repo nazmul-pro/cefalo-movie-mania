@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GENRE_IMG_URLS } from 'src/app/constants/genre-image-urls.constant';
+import { UrlPaths } from 'src/app/enums/url-paths.enum';
 import { IGenre } from 'src/app/interfaces/genre.interface';
 
 @Component({
@@ -26,7 +27,7 @@ export class GenreListSliderComponent implements OnInit {
     this.makeSliderGroups();
   }
   public gotoGenre(id: number): void {
-    this.router.navigate(['genres', id], { relativeTo: this.activatedRoute});
+    this.router.navigate([UrlPaths.GENRES, id], { relativeTo: this.activatedRoute});
   }
 
   
