@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IMovie } from "src/app/interfaces/movie.interface";
 import { environment } from 'src/environments/environment';
@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
   styleUrls: ['./movie-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieCardComponent {
   @Input() public movie!: IMovie;

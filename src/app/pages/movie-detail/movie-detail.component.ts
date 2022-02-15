@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { forkJoin, map, Observable, Subject, takeUntil } from 'rxjs';
@@ -11,7 +11,8 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
-  styleUrls: ['./movie-detail.component.scss']
+  styleUrls: ['./movie-detail.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieDetailComponent implements OnInit, OnDestroy, AfterViewInit {
   public movieId: number = Number(this.activatedRoute.snapshot.paramMap.get(UrlParamsProps.MOVIE_ID));
@@ -28,7 +29,8 @@ export class MovieDetailComponent implements OnInit, OnDestroy, AfterViewInit {
     private recentlyViewedApiService: RecentlyViewedApiService,
     private activatedRoute: ActivatedRoute,    
     private router: Router,
-    private _sanitizer: DomSanitizer
+    private _sanitizer: DomSanitizer,
+    private cd: ChangeDetectorRef,
   ) { }
 
   public ngOnInit(): void {
@@ -78,6 +80,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy, AfterViewInit {
           this.movie.id = this.movieId;
           this.movie.credits = results[1];
           this.recentlyViewedApiService.addMovieToRecentlyViewed(this.movie);
+          this.cd.detectChanges();
         });
   }
 
@@ -86,6 +89,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy, AfterViewInit {
       .pipe(takeUntil(this.clearSubs$), map(v => v.results))
       .subscribe(v => {
         this.safeVideoURL = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+v[0].key);
+        this.cd.detectChanges();
       });
   }
 
