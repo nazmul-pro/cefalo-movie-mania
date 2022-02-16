@@ -10,6 +10,7 @@
             fxFlex.md="25" 
             fxFlex.sm="33" 
             fxFlex.xs="50" 
+            class="animate__animated animate__slideInUp"
             *ngFor="let movie of movies;trackBy:trackByFn">
             <app-movie-card [movie]="movie"></app-movie-card>
         </div>
