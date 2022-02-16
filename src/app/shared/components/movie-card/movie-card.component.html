@@ -1,6 +1,6 @@
-<div class="movie" (click)="gotoMovieDetail()">
-    <div class="movie-img" style="background-image:url({{posterImageHostUrl}}{{movie?.poster_path}})"></div>
-    <div class="text-movie-cont">
+<div fxLayout="column" class="movie" (click)="gotoMovieDetail()">
+    <div fxFlex="70" class="movie-img" style="background-image:url({{posterImageHostUrl}}{{movie?.poster_path}})"></div>
+    <div fxFlex="30" class="text-movie-cont">
       <div class="mr-grid" fxLayout="row" fxLayoutAlign="start start">
         <div fxFlex="80">
           <h3 title="{{movie?.title}}">{{movie?.title?.slice(0, 40)}}</h3>
