@@ -132,7 +132,6 @@ describe('MoviesComponent', () => {
     expect(serviceSpy).toHaveBeenCalled();
   });
 
-
   it('should complete clearSubs$', () => {
     const clearSubs$: Subject<any> = (<any>component).clearSubs$;
     expect(clearSubs$).toBeTruthy();

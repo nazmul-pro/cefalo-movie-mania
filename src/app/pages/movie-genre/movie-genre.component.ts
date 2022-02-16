@@ -32,7 +32,6 @@ export class MovieGenreComponent implements OnInit, OnDestroy {
     this.genreId && this.getMoviesByGenre();
     this.getGenreList();
   }
-
   
   public ngOnDestroy(): void {
     this.clearSubs$.next(true);
