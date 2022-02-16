@@ -8,13 +8,9 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./movie-cast-crew-card.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MovieCastCrewCardComponent implements OnInit {
+export class MovieCastCrewCardComponent {
   
   @Input() public person!: ICastCrewPerson;
   public posterImageHostUrl: string = environment.posterImageHostUrl + '/w200';
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
