@@ -40,7 +40,6 @@ describe('MovieDetailComponent', () => {
   const routerSpy =
   jasmine.createSpyObj('Router', ['navigate']);
 
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ MovieDetailComponent ],
@@ -80,7 +79,6 @@ describe('MovieDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
 
   it('router should go to genre page', () => {
     const routerSpy = TestBed.get(Router);
