@@ -1,7 +1,8 @@
 <div class="sidenav">
     <div class="menu-item"
+        [routerLink]="[menu.routerLink]"
         fxLayoutAlign="center center"
-        *ngFor="let item of ['movies', 'wishlist', 'recently']">
-        {{item}}
+        *ngFor="let menu of menus">
+        <span>{{menu.name}}</span>
     </div>
 </div>

@@ -32,7 +32,7 @@
 .left-arrow {
   position: absolute;
   z-index: 999;
-  top: 43px;
+  top: 50px;
   background: rgba($color: #635d6580, $alpha: .5);
   border-radius: 100%;
   width: 50px;
@@ -55,7 +55,7 @@
 .right-arrow {
   position: absolute;
   z-index: 999;
-  top: 43px;
+  top: 50px;
   background: rgba($color: #635d6580, $alpha: .5);
   border-radius: 100%;
   width: 50px;
@@ -65,4 +65,81 @@
 
 .right-arrow:hover, .left-arrow:hover {
   background: rgba($color: #643f7180, $alpha: .5);
+}
+
+
+@media (min-width: 1400px) {
+  
+  .carousel-item {
+    .col,
+    .col-sm,
+    .col-md {
+      height: 200px;
+    }
+  }
+  
+  .genre-name {
+    font-size: 28px;
+    color: white;
+  }
+  .left-arrow, .right-arrow {
+    top: 75px;
+  }
+}
+
+@media (min-width: 1600px) {
+  
+  .carousel-item {
+    .col,
+    .col-sm,
+    .col-md {
+      height: 220px;
+    }
+  }
+  
+  .genre-name {
+    font-size: 28px;
+    color: white;
+  }
+  .left-arrow, .right-arrow {
+    top: 85px;
+  }
+}
+
+@media (min-width: 1800px) {
+  
+  .carousel-item {
+    .col,
+    .col-sm,
+    .col-md {
+      height: 240px;
+    }
+  }
+  
+  .genre-name {
+    font-size: 28px;
+    color: white;
+  }
+  .left-arrow, .right-arrow {
+    top: 90px;
+  }
+}
+@media (min-width: 2000px) {
+  
+  .carousel-item {
+    .col,
+    .col-sm,
+    .col-md {
+      height: 250px;
+    }
+  }
+  
+  .genre-name {
+    font-size: 30px;
+    color: white;
+  }
+  
+  .left-arrow, .right-arrow {
+    top: 100px;
+  }
 }
