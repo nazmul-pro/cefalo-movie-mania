@@ -41,7 +41,6 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     
     const compiled = fixture.nativeElement as HTMLElement;    
-    console.log(compiled);
     expect(compiled.querySelector('.home')?.textContent).toContain('App running..');
   });
 });

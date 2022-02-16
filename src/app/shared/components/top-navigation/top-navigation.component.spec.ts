@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, tick } from '@angular/core/testing';
 
 import { TopNavigationComponent } from './top-navigation.component';
 
@@ -21,5 +21,15 @@ describe('TopNavigationComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  
+  it('should toggle', () => {
+    let sidenavOpened = false;
+    component.sidenav = {
+      toggle: () => { sidenavOpened = !sidenavOpened }
+    };
+    component.toggleSidenav()
+    expect(sidenavOpened).toBeTruthy();
   });
 });
