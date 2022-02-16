@@ -35,11 +35,11 @@ export class GenreListSliderComponent implements OnInit {
   }
   
   private appendImageUrl(): void {
-    this.genres = this.genres.map(g => {
+    this.genres = this.genres?.map(g => {
       g.imageUrl = this.genreImgUrls
         .find(u => u.id === g.id)?.url || this.genreImgUrls[0].url;
       return g;
-    });
+    }) || [];
   }
 
   private makeSliderGroups(): void {
