@@ -51,6 +51,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy, AfterViewInit {
       this.top.nativeElement.scrollIntoView();
     }
   }
+  
   private getRelatedMovie(): void {    
     this.movieDetailApiService.getRecommendedById(this.movieId)
     .pipe(takeUntil(this.clearSubs$), map(d => d.results))
