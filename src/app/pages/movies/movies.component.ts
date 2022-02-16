@@ -79,7 +79,7 @@ export class MoviesComponent implements OnInit, OnDestroy {
       takeUntil(this.clearSubs$),
     ).subscribe(
       resp => {
-        resp.genre.movies = resp.resp.results.sort(() => RANDOM_NUMBER_FACTOR - Math.random()).slice(0, RANDOM_MOVIE_NUMBERS);
+        resp.genre.movies = resp.resp.results?.sort(() => RANDOM_NUMBER_FACTOR - Math.random()).slice(0, RANDOM_MOVIE_NUMBERS);
         UtilService.setMovieParamsWithGenreToLocal(resp.genre.id, { total_pages: resp.resp.total_pages });
         this.cd.detectChanges();
       },
