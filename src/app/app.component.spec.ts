@@ -5,6 +5,7 @@ import { MaterialModule } from './shared/modules/material.module';
 import { SharedUiModule } from './shared/modules/shared-ui.module';
 import { HttpClientTestingModule } from "@angular/common/http/testing";
 import { RouterTestingModule } from "@angular/router/testing";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -15,6 +16,7 @@ describe('AppComponent', () => {
         RouterTestingModule,
         MaterialModule,
         SharedUiModule,
+        BrowserAnimationsModule,
       ],
       declarations: [
         AppComponent
@@ -37,7 +39,9 @@ describe('AppComponent', () => {
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Movie Mania app is running!');
+    
+    const compiled = fixture.nativeElement as HTMLElement;    
+    console.log(compiled);
+    expect(compiled.querySelector('.home')?.textContent).toContain('App running..');
   });
 });
