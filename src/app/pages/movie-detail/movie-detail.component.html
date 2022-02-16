@@ -28,7 +28,14 @@
     <div class="text-center py-4">
         <p class="genre-title">Top Casts</p>
         <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap="20px grid">
-          <div *ngFor="let cast of movie?.credits?.cast?.slice(0, 10);trackBy: trackByFn;">
+          <div 
+            fxFlex="20" 
+            fxFlex.xl="15"
+            fxFlex.lg="20"
+            fxFlex.md="25" 
+            fxFlex.sm="33" 
+            fxFlex.xs="50"
+            *ngFor="let cast of movie?.credits?.cast?.slice(0, 10);trackBy: trackByFn;">
             <app-movie-cast-crew-card [person]="cast"></app-movie-cast-crew-card>
           </div>
         </div>
@@ -36,7 +43,14 @@
     <div class="text-center py-2">
         <p class="genre-title">Top Crews</p>
         <div fxLayout="row wrap" fxLayoutAlign="center start" fxLayoutGap="20px grid">
-          <div *ngFor="let cast of movie?.credits?.crew?.slice(0, 10);trackBy: trackByFn;">
+          <div 
+            fxFlex="20" 
+            fxFlex.xl="15"
+            fxFlex.lg="20"
+            fxFlex.md="25" 
+            fxFlex.sm="33" 
+            fxFlex.xs="50"
+            *ngFor="let cast of movie?.credits?.crew?.slice(0, 10);trackBy: trackByFn;">
             <app-movie-cast-crew-card [person]="cast"></app-movie-cast-crew-card>
           </div>
         </div>
