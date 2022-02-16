@@ -2,43 +2,6 @@ $accent-color: #e7e7e7;
 $brand-color:#fe4141;
 $dark-color: #1e1b26;
 
-body {
-
-  background: linear-gradient(rgba(30, 27, 38, 0.95),
-      rgba(30, 27, 38, 0.95)),
-    url("https://i.ibb.co/FDGqCmM/papers-co-ag74-interstellar-wide-space-film-movie-art-33-iphone6-wallpaper.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: repeat;
-}
-
-.container {
-  width: 100%;
-  height: 100%;
-}
-
-.cellphone-container {
-  width: 385px;
-  height: 650px;
-  background-color: #1e1b26;
-  margin: 60px auto 0 auto;
-  box-shadow: 5px 5px 115px -14px black;
-  border-radius: 4px;
-}
-
-.menu {
-  position: absolute;
-  right: 12px;
-  top: 6px;
-  z-index: 999;
-
-  i {
-    font-size: 40px;
-    color: $brand-color;
-    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, .5));
-  }
-}
-
 .movie-img {
   width: 100%;
   background-position: center;
@@ -54,9 +17,7 @@ body {
       color-stop(0.65, rgba(0, 0, 0, 1)),
       color-stop(0.85, rgba(0, 0, 0, 0.6)),
       color-stop(1.00, rgba(0, 0, 0, 0)));
-
   position: relative;
-
 }
 
 .movie {
@@ -65,7 +26,6 @@ body {
   background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.06) 39%, rgba(30, 27, 38, 0.88) 53%, #00050d 55%);
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.06) 39%, rgba(30, 27, 38, 0.88) 53%, #00050d 55%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#1e1b26', GradientType=0);
-
   background-size: contain;
   background-size: cover;
   z-index: 1 !important;
@@ -80,34 +40,23 @@ body {
     height: 400px;
   }
 }
+
 @media (min-width: 2000px) {
   .movie {
     height: 450px;
   }
 }
 
-/* TYPOGRAPHY STARTS */
-
-/* Fonts */
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic,600italic,700italic,800italic);
-
 $heading-font-family: 'Montserrat',
 sans-serif;
 $paragraph-font-family: 'Open Sans',
 sans-serif;
 
-$light: 300;
-$regular: 400;
 $semi-bold: 600;
-$bold: 700;
 $font-regular: 400;
-$mont-bold: 700;
-
 $text-movie-title:36px;
 $text-summary:12px;
 $text-action-btn:14px;
-$text-movie-description:12px;
 
 h3 {
   font-size: $text-action-btn;
@@ -130,24 +79,6 @@ h3 {
     margin-right: 6px;
     font-weight: $semi-bold;
   }
-}
-
-.mr-grid {
-  width: 100%;
-}
-
-.mr-grid:before,
-.mr-grid:after {
-  content: "";
-  display: table;
-}
-
-.mr-grid:after {
-  clear: both;
-}
-
-.mr-grid {
-  *zoom: 1;
 }
 
 .text-movie-cont {
