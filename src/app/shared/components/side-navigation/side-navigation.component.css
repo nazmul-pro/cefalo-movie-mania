@@ -1,13 +1,14 @@
 .menu-item {
     height: 70px;
-    font-size: 20px;
+    font-size: 16px;
     color: white;
     cursor: pointer;
+    text-align: center;
 }
 .menu-item:hover {
     background-color: #111f33;
 }
 .sidenav {
     padding-top: 65px;
-    width: 120px;
+    width: 100px;
 }

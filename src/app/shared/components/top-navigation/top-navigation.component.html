@@ -8,13 +8,13 @@
       >
         <mat-icon>menu</mat-icon>
       </button>
-      <span>Movie Mania</span>
+      <span class="cursor-pointer" [routerLink]="[menus[0].routerLink]">Cefalo Movie Mania</span>
       <span fxFlex></span>
       <div fxShow="true" fxHide.lt-md>
         <!-- The following menu items will be hidden on both SM and XS screen sizes -->
-        <a href="#" [routerLink]="['movies']" mat-button class="menu-item">Movies</a>
-        <a href="#" [routerLink]="['wishlist']" mat-button class="menu-item">Wish List</a>
-        <a href="#" [routerLink]="['recently-viewed']" mat-button class="menu-item">Recently Viewed</a>
+        <a 
+          *ngFor="let menu of menus"
+          href="#" [routerLink]="[menu.routerLink]" mat-button class="menu-item">{{menu.name}}</a>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>

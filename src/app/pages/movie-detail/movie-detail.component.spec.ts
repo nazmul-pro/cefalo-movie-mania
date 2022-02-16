@@ -113,5 +113,9 @@ describe('MovieDetailComponent', () => {
     expect(serviceSpy).toHaveBeenCalled();
     expect(serviceSpy).toHaveBeenCalledWith(1);
   })
+  
+  it('should return id by track by fn', () => {  
+    expect(component.trackByFn(0, {id: 1})).toEqual(1);
+  });
 
 });
