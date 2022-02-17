@@ -34,10 +34,13 @@ npm install -g @angular/cli
 ```bash
 npm install
 ```
+ ***If you get any error or got stuck then please try to run npm install again. If no luck then try to remove node_modules, package.lock.json file then try to run npm install***
+  
  - After complete it. write .
 ```bash
 ng serve --open
 ```
+  This command will open the project in browser
     
 ## Other Commands
 
