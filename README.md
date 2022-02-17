@@ -1,27 +1,87 @@
-# Cmm
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
+# Cefalo Movie Mania
 
-## Development server
+A movie catalog website based on the data provided from The Movie 
+Database (TMDb). 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## First Look
 
-## Code scaffolding
+![App Screenshot](https://i.ibb.co/crtfcXG/1.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Angular requires an [Active LTS or maintenance LTS version of Node.js](https://nodejs.org/en/about/releases).
 
-## Running end-to-end tests
+- Download and install Node.js and npm package manager from [Node.js Official Site](https://nodejs.org) 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    To check your node and npm version run below command
+```bash
+node -v
+npm -v
+```
+    In my case node version: 16.13 and npm version: 8.1.4
 
-## Further help
+- Install the Angular CLI
+```bash
+npm install -g @angular/cli
+```
+- Clone or download the project
+- Go to downloaded folder
+- Open command prompt/Open in VSCode. and write command
+```bash
+npm install
+```
+ - After complete it. write .
+```bash
+ng serve --open
+```
+    
+## Other Commands
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+| Command | Purpose |
+| ------ | ------ |
+| ng serve | To run angular project |
+| ng lint | To check lint error/status |
+| ng test --code-coverage | To run tests and see coverage |
+| ng build |  To build the project |
+| nhscoder@gmail.com | For further help |
+
+
+
+## Features
+
+- Listing of all the movie genres based on the TMDb API.
+- Random 5 movie names along with its poster image for each movie genre.
+- Listing of top 10 movies in this genre
+- The movie detail page
+- Movie wish list
+- Listing of recently visited movies, based on my page view on movie detail page
+- The trailer video of a movie in the movie detail page
+
+
+
+
+## Screenshots
+
+![Top 10 movies by genre](https://i.ibb.co/1Lf9G5L/2.png)
+
+![Movie Detail Page](https://i.ibb.co/CsdR1SN/3.png)
+
+![Top Casts and Crews](https://i.ibb.co/wKhkDtY/4.png)
+
+![Recommended Movies](https://i.ibb.co/M82hR2d/5.png)
+
+![Recently Viewed](https://i.ibb.co/2FLHkwQ/6.png)
+
+![My Wish List](https://i.ibb.co/4fRbDH0/7.png)
+
+![Test Coverage](https://i.ibb.co/swbhvTS/8.png)
+
+
+## Authors
+
+- [@nazmul-pro](https://www.github.com/nazmul-pro)
+- [@cefalolab](https://www.github.com/cefalolab)
